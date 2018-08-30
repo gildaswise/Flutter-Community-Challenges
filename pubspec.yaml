@@ -6,8 +6,12 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^0.1.2
   groovin_material_icons: ^1.0.2
+  json_annotation: ^1.0.0
 
 dev_dependencies:
+  build_runner: ^0.10.0
+  json_serializable: ^1.0.0
+  flutter_advanced_networkimage: ^0.3.6
   flutter_test:
     sdk: flutter
 
