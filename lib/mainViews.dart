@@ -13,6 +13,7 @@ class MainViews extends StatefulWidget {
 }
 
 class _MainViewsState extends State<MainViews> {
+
   // List of bottom navigation bar items
   List<BottomNavigationBarItem> _bottomNavigationBarItems = [
     BottomNavigationBarItem(
