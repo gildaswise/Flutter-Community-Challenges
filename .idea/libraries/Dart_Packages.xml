@@ -6,6 +6,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/analyzer-0.32.4/lib" />
+
             </list>
           </value>
         </entry>
@@ -20,6 +21,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/async-2.0.8/lib" />
+
             </list>
           </value>
         </entry>
@@ -97,6 +99,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/code_builder-3.1.2/lib" />
+
             </list>
           </value>
         </entry>
@@ -118,6 +121,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/crypto-2.0.6/lib" />
+
             </list>
           </value>
         </entry>
@@ -125,6 +129,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/csslib-0.14.5/lib" />
+
             </list>
           </value>
         </entry>
@@ -146,6 +151,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/fixnum-0.10.8/lib" />
+
             </list>
           </value>
         </entry>
@@ -160,6 +166,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/flutter_advanced_networkimage-0.3.6/lib" />
+
             </list>
           </value>
         </entry>
@@ -167,6 +174,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/flutter/packages/flutter_test/lib" />
+
             </list>
           </value>
         </entry>
@@ -174,6 +182,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/front_end-0.1.4/lib" />
+
             </list>
           </value>
         </entry>
@@ -188,6 +197,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/graphs-0.1.2+1/lib" />
+
             </list>
           </value>
         </entry>
@@ -195,6 +205,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/groovin_material_icons-1.0.3/lib" />
+
             </list>
           </value>
         </entry>
@@ -202,6 +213,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/html-0.13.3+3/lib" />
+
             </list>
           </value>
         </entry>
@@ -209,6 +221,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/http-0.11.3+17/lib" />
+
             </list>
           </value>
         </entry>
@@ -216,6 +229,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/http_multi_server-2.0.5/lib" />
+
             </list>
           </value>
         </entry>
@@ -223,6 +237,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/http_parser-3.1.3/lib" />
+
             </list>
           </value>
         </entry>
@@ -230,6 +245,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/io-0.3.3/lib" />
+
             </list>
           </value>
         </entry>
@@ -258,6 +274,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/json_serializable-1.2.1/lib" />
+
             </list>
           </value>
         </entry>
@@ -265,6 +282,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/kernel-0.3.4/lib" />
+
             </list>
           </value>
         </entry>
@@ -272,6 +290,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/logging-0.11.3+2/lib" />
+
             </list>
           </value>
         </entry>
@@ -279,6 +298,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.3+1/lib" />
+
             </list>
           </value>
         </entry>
@@ -286,6 +306,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/meta-1.1.6/lib" />
+
             </list>
           </value>
         </entry>
@@ -293,6 +314,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/mime-0.9.6+2/lib" />
+
             </list>
           </value>
         </entry>
@@ -300,6 +322,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/multi_server_socket-1.0.2/lib" />
+
             </list>
           </value>
         </entry>
@@ -307,6 +330,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/node_preamble-1.4.4/lib" />
+
             </list>
           </value>
         </entry>
@@ -314,6 +338,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/package_config-1.0.5/lib" />
+
             </list>
           </value>
         </entry>
@@ -321,6 +346,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/package_resolver-1.0.4/lib" />
+
             </list>
           </value>
         </entry>
@@ -335,6 +361,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/path_provider-0.4.1/lib" />
+
             </list>
           </value>
         </entry>
@@ -342,6 +369,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/plugin-0.2.0+3/lib" />
+
             </list>
           </value>
         </entry>
@@ -349,6 +377,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/pool-1.3.6/lib" />
+
             </list>
           </value>
         </entry>
@@ -363,6 +392,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/pubspec_parse-0.1.2+2/lib" />
+
             </list>
           </value>
         </entry>
@@ -370,6 +400,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/quiver-2.0.0+1/lib" />
+
             </list>
           </value>
         </entry>
@@ -377,6 +408,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/shelf-0.7.3+3/lib" />
+
             </list>
           </value>
         </entry>
@@ -384,6 +416,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/shelf_packages_handler-1.0.4/lib" />
+
             </list>
           </value>
         </entry>
@@ -391,6 +424,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/shelf_static-0.2.8/lib" />
+
             </list>
           </value>
         </entry>
@@ -398,6 +432,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/shelf_web_socket-0.2.2+4/lib" />
+
             </list>
           </value>
         </entry>
@@ -412,6 +447,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/source_gen-0.9.0+1/lib" />
+
             </list>
           </value>
         </entry>
@@ -419,6 +455,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/source_map_stack_trace-1.1.5/lib" />
+
             </list>
           </value>
         </entry>
@@ -426,6 +463,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/source_maps-0.10.7/lib" />
+
             </list>
           </value>
         </entry>
@@ -433,6 +471,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/source_span-1.4.1/lib" />
+
             </list>
           </value>
         </entry>
@@ -440,6 +479,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.9.3/lib" />
+
             </list>
           </value>
         </entry>
@@ -454,6 +494,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/stream_transform-0.0.14+1/lib" />
+
             </list>
           </value>
         </entry>
@@ -468,6 +509,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.0.1/lib" />
+
             </list>
           </value>
         </entry>
@@ -475,6 +517,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/test-1.3.0/lib" />
+
             </list>
           </value>
         </entry>
@@ -482,6 +525,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/typed_data-1.1.6/lib" />
+
             </list>
           </value>
         </entry>
@@ -489,6 +533,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/utf-0.9.0+5/lib" />
+
             </list>
           </value>
         </entry>
@@ -517,6 +562,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/web_socket_channel-1.0.9/lib" />
+
             </list>
           </value>
         </entry>
@@ -524,6 +570,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/yaml-2.1.15/lib" />
+
             </list>
           </value>
         </entry>
@@ -605,6 +652,7 @@
       <root url="file://$USER_HOME$/flutter/bin/cache/pkg/sky_engine/lib" />
       <root url="file://$USER_HOME$/flutter/packages/flutter/lib" />
       <root url="file://$USER_HOME$/flutter/packages/flutter_test/lib" />
+
     </CLASSES>
     <JAVADOC />
     <SOURCES />

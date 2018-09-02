@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Community Challenges',
       theme: ThemeData(
         primarySwatch: Colors.indigo,
+        fontFamily: 'GoogleSans'
       ),
       home: MainViews(title: 'Flutter Community Challenges'),
       debugShowCheckedModeBanner: false,

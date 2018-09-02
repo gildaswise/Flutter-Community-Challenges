@@ -109,6 +109,40 @@ class _MainViewsState extends State<MainViews> {
         title: Text(widget.title),
         centerTitle: true,
       ),
+      drawer: Drawer(
+        child: Column(
+          children: <Widget>[
+            UserAccountsDrawerHeader(
+              accountName: Text("Test Person"),
+              accountEmail: Text("testperson@test.com"),
+              currentAccountPicture: const CircleAvatar(
+
+              ),
+            ),
+            ListTile(
+              title: Text("My Submissions"),
+              trailing: Icon(GroovinMaterialIcons.account_circle),
+              onTap: (){
+
+              },
+            ),
+            ListTile(
+              title: Text("App Settings"),
+              trailing: Icon(GroovinMaterialIcons.settings_outline),
+              onTap: (){
+
+              },
+            ),
+            ListTile(
+              title: Text("Log Out"),
+              trailing: Icon(GroovinMaterialIcons.logout),
+              onTap: (){
+
+              },
+            ),
+          ],
+        ),
+      ),
       body: PageView(
         onPageChanged: _onPageChanged,
         controller: _pageController,
