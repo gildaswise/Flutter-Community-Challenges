@@ -6,7 +6,7 @@ import 'package:flutter_community_challenges/hallOfFame.dart';
 import 'package:flutter_community_challenges/upcomingChallenges.dart';
 import 'package:groovin_material_icons/groovin_material_icons.dart';
 import 'package:flutter_community_challenges/current_challenge.dart';
-import 'package:flutter_community_challenges/suggestChallenge.dart';
+import 'pager_page.dart';
 
 class MainViews extends StatefulWidget {
   MainViews({Key key, this.title}) : super(key: key);
@@ -18,31 +18,6 @@ class MainViews extends StatefulWidget {
 }
 
 class _MainViewsState extends State<MainViews> {
-
-  // List of bottom navigation bar items
-  List<BottomNavigationBarItem> _bottomNavigationBarItems = [
-    BottomNavigationBarItem(
-        icon: Icon(GroovinMaterialIcons.information_outline),
-        title: Text("About"),
-        backgroundColor: Colors.indigo),
-    BottomNavigationBarItem(
-        icon: Icon(GroovinMaterialIcons.crown),
-        title: Text("Hall of Fame"),
-        backgroundColor: Colors.indigo),
-    BottomNavigationBarItem(
-        icon: Icon(GroovinMaterialIcons.code_tags),
-        title: Text("Current"),
-        backgroundColor: Colors.indigo),
-    BottomNavigationBarItem(
-        icon: Icon(GroovinMaterialIcons.calendar_text),
-        title: Text("Upcoming"),
-        backgroundColor: Colors.indigo),
-    BottomNavigationBarItem(
-        icon: Icon(GroovinMaterialIcons.comment_plus_outline),
-        title: Text("Suggestions"),
-        backgroundColor: Colors.indigo),
-  ];
-
   PageController _pageController;
 
   // Navigate pages based on bottom navigation bar item tap
@@ -74,93 +49,100 @@ class _MainViewsState extends State<MainViews> {
 
   @override
   Widget build(BuildContext context) {
-    // List of FloatingActionButtons to show only on 'Suggestions' page
-    List<Widget> _fabs = [
-      Container(),
-      Container(),
-      FloatingActionButton.extended(
-        onPressed: () {
-          Navigator.pushNamed(context, "/SubmitEntryToChallenge");
-        },
-        icon: Icon(Icons.add),
-        label: Text("Submit Entry"),
-      ),
-      Container(),
-      FloatingActionButton.extended(
-        onPressed: () {
-          Navigator.pushNamed(context, "/SuggestChallenge");
-        },
-        icon: Icon(Icons.add),
-        label: Text("Suggest Challenge"),
-      ),
+    List<PagerPage> _pages = <PagerPage>[
+      About(),
+      HallOfFame(),
+      CurrentChallenge(),
+      UpcomingChallenges(),
+      ChallengeSuggestions(),
     ];
 
-    SystemChrome.setSystemUIOverlayStyle(
-      SystemUiOverlayStyle.light.copyWith(
-        statusBarIconBrightness: Brightness.dark,
-        statusBarColor: Colors.indigo,
-        systemNavigationBarColor: Colors.indigo,
-        systemNavigationBarIconBrightness: Brightness.dark,
-      )
-    );
+    // List of FloatingActionButtons to show only on 'Suggestions' page
+    List<Widget> _fabs = _pages
+        .map<Widget>((PagerPage page) => page.fabBuilder(context))
+        .toList();
+
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light.copyWith(
+      statusBarIconBrightness: Theme.of(context).brightness,
+      statusBarColor: Theme.of(context).primaryColor,
+      systemNavigationBarColor: Theme.of(context).primaryColor,
+      systemNavigationBarIconBrightness: Theme.of(context).brightness,
+    ));
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-        centerTitle: true,
-      ),
       drawer: Drawer(
         child: Column(
           children: <Widget>[
             UserAccountsDrawerHeader(
               accountName: Text("Test Person"),
               accountEmail: Text("testperson@test.com"),
-              currentAccountPicture: const CircleAvatar(
-
-              ),
+              currentAccountPicture: const CircleAvatar(),
             ),
             ListTile(
               title: Text("My Submissions"),
               trailing: Icon(GroovinMaterialIcons.account_circle),
-              onTap: (){
-
-              },
+              onTap: () {},
             ),
             ListTile(
               title: Text("App Settings"),
               trailing: Icon(GroovinMaterialIcons.settings_outline),
-              onTap: (){
-
-              },
+              onTap: () {},
             ),
             ListTile(
               title: Text("Log Out"),
               trailing: Icon(GroovinMaterialIcons.logout),
-              onTap: (){
-
-              },
+              onTap: () {},
             ),
           ],
         ),
       ),
-      body: PageView(
-        onPageChanged: _onPageChanged,
-        controller: _pageController,
-        children: <Widget>[
-          About(),
-          HallOfFame(),
-          CurrentChallenge(),
-          UpcomingChallenges(),
-          ChallengeSuggestions(),
-        ],
+      body: NestedScrollView(
+        scrollDirection: Axis.vertical,
+        headerSliverBuilder: (_, isScrolled) => [
+              SliverAppBar(
+                title: Text(widget.title),
+                centerTitle: true,
+                snap: true,
+                floating: true,
+              ),
+            ],
+        body: PageView(
+          onPageChanged: _onPageChanged,
+          controller: _pageController,
+          children: _pages,
+        ),
       ),
       floatingActionButton: _fabs[_page],
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       bottomNavigationBar: BottomNavigationBar(
-        items: _bottomNavigationBarItems,
+        items: _bottomNavigationBarItemsBuilder(context),
         currentIndex: _page,
         onTap: navigationTapped,
       ),
     );
   }
+
+  // List of bottom navigation bar items
+  List<BottomNavigationBarItem> _bottomNavigationBarItemsBuilder(context) => [
+        BottomNavigationBarItem(
+            icon: Icon(GroovinMaterialIcons.information_outline),
+            title: Text("About"),
+            backgroundColor: Theme.of(context).primaryColor),
+        BottomNavigationBarItem(
+            icon: Icon(GroovinMaterialIcons.crown),
+            title: Text("Hall of Fame"),
+            backgroundColor: Theme.of(context).primaryColor),
+        BottomNavigationBarItem(
+            icon: Icon(GroovinMaterialIcons.code_tags),
+            title: Text("Current"),
+            backgroundColor: Theme.of(context).primaryColor),
+        BottomNavigationBarItem(
+            icon: Icon(GroovinMaterialIcons.calendar_text),
+            title: Text("Upcoming"),
+            backgroundColor: Theme.of(context).primaryColor),
+        BottomNavigationBarItem(
+            icon: Icon(GroovinMaterialIcons.comment_plus_outline),
+            title: Text("Suggestions"),
+            backgroundColor: Theme.of(context).primaryColor),
+      ];
 }

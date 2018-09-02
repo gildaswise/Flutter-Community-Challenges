@@ -2,10 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_advanced_networkimage/flutter_advanced_networkimage.dart';
 import 'package:meta/meta.dart';
 import 'model/model.dart';
+import 'pager_page.dart';
 
-class CurrentChallenge extends StatefulWidget {
+class CurrentChallenge extends StatefulWidget implements PagerPage {
   @override
   _CurrentChallengeState createState() => _CurrentChallengeState();
+
+  @override
+  Widget fabBuilder(BuildContext context) => FloatingActionButton.extended(
+        onPressed: () {
+          Navigator.pushNamed(context, "/SubmitEntryToChallenge");
+        },
+        icon: Icon(Icons.add),
+        label: Text("Submit Entry"),
+      );
 }
 
 class _CurrentChallengeState extends State<CurrentChallenge> {
@@ -31,80 +41,113 @@ class RunningChallenge extends StatelessWidget {
     return Column(
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Container(
-            width: 400.0,
-            child: Card(
-              elevation: 2.0,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  children: <Widget>[
-                    Text(
-                      "Current Challenge:",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 24.0),
-                    ),
-                    Text(
-                      "Challenge Name",
-                      style: TextStyle(
-                          fontStyle: FontStyle.italic, fontSize: 20.0),
-                    ),
-                    Text(
-                      "Time Remaining: 00d, 00:00",
-                      style: TextStyle(
-                          fontStyle: FontStyle.italic, fontSize: 16.0),
-                    ),
-                    Text(
-                      "Submissions so far: X",
-                      style: TextStyle(),
-                    ),
-                  ],
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: Card(
+            color: Theme.of(context).primaryColor,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16.0)),
+            child: Column(
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16.0,
+                    vertical: 8.0,
+                  ),
+                  child: Text(
+                    "Challenge Title",
+                    style: Theme.of(context).primaryTextTheme.title,
+                    textAlign: TextAlign.center,
+                  ),
                 ),
-              ),
+                Card(
+                  elevation: 0.0,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16.0)),
+                  margin: EdgeInsets.zero,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 16.0, vertical: 8.0),
+                    child: Column(
+                      children: <Widget>[
+                        Text(
+                          "Time left : 00d. 00:00",
+                          textAlign: TextAlign.center,
+                          style: Theme.of(context).textTheme.subhead,
+                        ),
+                        Text(
+                          "X Submissions",
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    ),
+                  ),
+                )
+              ],
             ),
           ),
         ),
-        Wrap(
-          spacing: 8.0,
+        GridView.count(
+          padding: EdgeInsets.zero,
+          physics: NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
+          crossAxisCount:
+              MediaQuery.of(context).orientation == Orientation.portrait
+                  ? 2
+                  : 4,
+          childAspectRatio: 0.5,
           children: <Widget>[
             AppSubmissionPreview(
-              submission: AppSubmission(media: [
-                "https://www.torontopearson.com/uploadedImages/Pearson/Content/Flights/Mobile_App/AppScreenshot.jpg"
+              submission: AppSubmission(title: "LOOOOOOOONG APP TITLE", media: [
+                "https://www.torontopearson.com/uploadedImages/Pearson/Content/Flights/Mobile_App/AppScreenshot.jpg",
               ]),
             ),
             AppSubmissionPreview(
-              submission: AppSubmission(media: [
-                "https://www.torontopearson.com/uploadedImages/Pearson/Content/Flights/Mobile_App/AppScreenshot.jpg"
+              submission: AppSubmission(title: "LOOOOOOOONG APP TITLE", media: [
+                "https://www.torontopearson.com/uploadedImages/Pearson/Content/Flights/Mobile_App/AppScreenshot.jpg",
               ]),
             ),
             AppSubmissionPreview(
-              submission: AppSubmission(media: [
-                "https://www.torontopearson.com/uploadedImages/Pearson/Content/Flights/Mobile_App/AppScreenshot.jpg"
+              submission: AppSubmission(title: "LOOOOOOOONG APP TITLE", media: [
+                "https://www.torontopearson.com/uploadedImages/Pearson/Content/Flights/Mobile_App/AppScreenshot.jpg",
               ]),
             ),
             AppSubmissionPreview(
-              submission: AppSubmission(media: [
-                "https://www.torontopearson.com/uploadedImages/Pearson/Content/Flights/Mobile_App/AppScreenshot.jpg"
+              submission: AppSubmission(title: "LOOOOOOOONG APP TITLE", media: [
+                "https://www.torontopearson.com/uploadedImages/Pearson/Content/Flights/Mobile_App/AppScreenshot.jpg",
               ]),
             ),
             AppSubmissionPreview(
-              submission: AppSubmission(media: [
-                "https://www.torontopearson.com/uploadedImages/Pearson/Content/Flights/Mobile_App/AppScreenshot.jpg"
+              submission: AppSubmission(title: "LOOOOOOOONG APP TITLE", media: [
+                "https://www.torontopearson.com/uploadedImages/Pearson/Content/Flights/Mobile_App/AppScreenshot.jpg",
               ]),
             ),
             AppSubmissionPreview(
-              submission: AppSubmission(media: [
-                "https://www.torontopearson.com/uploadedImages/Pearson/Content/Flights/Mobile_App/AppScreenshot.jpg"
+              submission: AppSubmission(title: "LOOOOOOOONG APP TITLE", media: [
+                "https://www.torontopearson.com/uploadedImages/Pearson/Content/Flights/Mobile_App/AppScreenshot.jpg",
               ]),
             ),
             AppSubmissionPreview(
-              submission: AppSubmission(media: [
-                "https://www.torontopearson.com/uploadedImages/Pearson/Content/Flights/Mobile_App/AppScreenshot.jpg"
+              submission: AppSubmission(title: "LOOOOOOOONG APP TITLE", media: [
+                "https://www.torontopearson.com/uploadedImages/Pearson/Content/Flights/Mobile_App/AppScreenshot.jpg",
+              ]),
+            ),
+            AppSubmissionPreview(
+              submission: AppSubmission(title: "LOOOOOOOONG APP TITLE", media: [
+                "https://www.torontopearson.com/uploadedImages/Pearson/Content/Flights/Mobile_App/AppScreenshot.jpg",
+              ]),
+            ),
+            AppSubmissionPreview(
+              submission: AppSubmission(title: "LOOOOOOOONG APP TITLE", media: [
+                "https://www.torontopearson.com/uploadedImages/Pearson/Content/Flights/Mobile_App/AppScreenshot.jpg",
+              ]),
+            ),
+            AppSubmissionPreview(
+              submission: AppSubmission(title: "LOOOOOOOONG APP TITLE", media: [
+                "https://www.torontopearson.com/uploadedImages/Pearson/Content/Flights/Mobile_App/AppScreenshot.jpg",
               ]),
             ),
           ],
-        )
+        ),
       ],
     );
   }
@@ -118,30 +161,39 @@ class AppSubmissionPreview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final width = 180.0;
-    final height = 300.0;
-    return Stack(
-      alignment: AlignmentDirectional.bottomCenter,
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(bottom: 20.0),
-          child: Container(
-            height: height,
-            width: width,
-            child: Card(
-              child: Image(
-                image: AdvancedNetworkImage(
-                  submission.media[0],
-                ),
-                fit: BoxFit.fill,
+    return Card(
+      semanticContainer: true,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16.0),
+      ),
+      color: Theme.of(context).primaryColor,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16.0),
+            ),
+            margin: EdgeInsets.zero,
+            elevation: 0.0,
+            child: Image(
+              image: AdvancedNetworkImage(
+                submission.media[0],
+              ),
+              fit: BoxFit.fill,
+            ),
+          ),
+          Expanded(
+            child: Center(
+              child: Text(
+                submission.title,
+                style: Theme.of(context).primaryTextTheme.body2,
+                textAlign: TextAlign.center,
               ),
             ),
           ),
-        ),
-        Chip(
-          label: Text("Long app title"),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

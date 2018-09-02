@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:groovin_material_icons/groovin_material_icons.dart';
-
-class HallOfFame extends StatefulWidget {
+import 'pager_page.dart';
+class HallOfFame extends StatefulWidget implements PagerPage {
   @override
   _HallOfFameState createState() => _HallOfFameState();
+
+  @override
+  Widget fabBuilder(BuildContext context) => Container();
+
+  @override
+  PreferredSizeWidget headerBuilder(BuildContext context, bool isScrolled) => PreferredSize(child: Container(), preferredSize: Size.zero);
 }
 
 class _HallOfFameState extends State<HallOfFame> {

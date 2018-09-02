@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:groovin_material_icons/groovin_material_icons.dart';
-
-class About extends StatefulWidget {
+import 'pager_page.dart';
+class About extends StatefulWidget implements PagerPage {
   @override
   _AboutState createState() => _AboutState();
+
+  @override
+  Widget fabBuilder(BuildContext context) => Container();
+
+  @override
+  PreferredSizeWidget headerBuilder(BuildContext context, bool isScrolled) => null;
 }
 
 class _AboutState extends State<About> {
