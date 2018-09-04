@@ -7,14 +7,51 @@ class SuggestChallenge extends StatefulWidget {
 }
 
 class _SuggestChallengeState extends State<SuggestChallenge> {
+  TextEditingController challengeNameController = TextEditingController();
+  String challengeCategory;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Suggest A Challenge"),
       ),
-      body: Container(
-        
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            ListTile(
+              leading: Icon(GroovinMaterialIcons.sign_text), // needs a better icon
+              title: TextField(
+                decoration: InputDecoration(
+                  labelText: "Challenge Name",
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(GroovinMaterialIcons.more), // needs a better icon
+              title: DropdownButton(
+                hint: Text("Choose a Challenge Category"),
+                value: challengeCategory,
+                items: [
+                  DropdownMenuItem(
+                    child: Text("Test"),
+                    value: "Test",
+                  ),
+                ],
+                onChanged: (value){
+                  challengeCategory = value;
+                },
+              )
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        icon: Icon(GroovinMaterialIcons.content_save_outline),
+        label: Text("Submit"),
+        onPressed: (){
+          
+        },
       ),
     );
   }

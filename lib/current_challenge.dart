@@ -10,12 +10,12 @@ class CurrentChallenge extends StatefulWidget implements PagerPage {
 
   @override
   Widget fabBuilder(BuildContext context) => FloatingActionButton.extended(
-        onPressed: () {
-          Navigator.pushNamed(context, "/SubmitEntryToChallenge");
-        },
-        icon: Icon(Icons.add),
-        label: Text("Submit Entry"),
-      );
+    onPressed: () {
+      Navigator.pushNamed(context, "/SubmitEntryToChallenge");
+    },
+    icon: Icon(Icons.add),
+    label: Text("Submit Entry"),
+  );
 }
 
 class _CurrentChallengeState extends State<CurrentChallenge> {
