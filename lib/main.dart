@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       home: LoginScreen(),
       debugShowCheckedModeBanner: false,
       routes: <String, WidgetBuilder>{
-        "/MainViews": (BuildContext context) => MainViews(),
+        "/MainViews": (BuildContext context) => MainViews(title: "Flutter Community Challenges",),
         "/SuggestChallenge": (BuildContext context) => SuggestChallenge(),
         "/SubmitEntryToChallenge": (BuildContext context) => SubmitEntryToChallenge(),
       },

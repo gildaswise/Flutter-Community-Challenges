@@ -19,10 +19,16 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   final simpleAuth.GithubApi githubApi = simpleAuth.GithubApi(
-      "github", "9020fb1eded8b2a9206f",
-      "635a3c0c4513af8899339002fd20164182bc817c",
-      "https://github.com/GroovinChip/Flutter-Community-Challenges",
+    "github", "9020fb1eded8b2a9206f",
+    "635a3c0c4513af8899339002fd20164182bc817c",
+    "https://github.com/GroovinChip/Flutter-Community-Challenges",
+    scopes: [
+      "user",
+      "repo",
+      "public_repo",
+    ],
   );
+
   void showError(dynamic ex) {
     showMessage(ex.toString());
   }
@@ -88,13 +94,16 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: RaisedButton.icon(
                   onPressed: (){
                     login(githubApi);
-                    },
+                  },
                   icon: Icon(GroovinMaterialIcons.github_circle, color: Colors.white,),
                   label: Text("Sign in with GitHub", style: TextStyle(color: Colors.white),),
                   color: Colors.indigo,
                 ),
               ),
-              FlatButton(onPressed: (){}, child: Text("Dev Login"))
+              FlatButton(onPressed: (){
+                Navigator.of(context).pushNamedAndRemoveUntil(
+                    '/MainViews', (Route<dynamic> route) => false);
+              }, child: Text("Dev Login"))
             ],
           ),
         ),

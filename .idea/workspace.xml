@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="799b8ead-1faa-48fe-8810-89da3e422c15" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/loginScreen.dart" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" />
+      <change beforePath="$PROJECT_DIR$/lib/loginScreen.dart" afterPath="$PROJECT_DIR$/lib/loginScreen.dart" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" afterPath="$PROJECT_DIR$/lib/main.dart" />
+      <change beforePath="$PROJECT_DIR$/lib/mainViews.dart" afterPath="$PROJECT_DIR$/lib/mainViews.dart" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" afterPath="$PROJECT_DIR$/pubspec.lock" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" afterPath="$PROJECT_DIR$/pubspec.yaml" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -31,8 +27,8 @@
             <state relative-caret-position="180">
               <caret line="9" column="29" lean-forward="false" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
               <folding>
-                <marker date="1536103842447" expanded="true" signature="607:1942" ph="flutter: &lt;2 keys&gt;" />
-                <marker date="1536103842447" expanded="true" signature="1225:1942" ph="fonts: &lt;1 item&gt;" />
+                <marker date="1536105335002" expanded="true" signature="607:1942" ph="flutter: &lt;2 keys&gt;" />
+                <marker date="1536105335002" expanded="true" signature="1225:1942" ph="fonts: &lt;1 item&gt;" />
               </folding>
             </state>
           </provider>
@@ -51,8 +47,8 @@
       <file leaf-file-name="main.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/main.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="17" column="24" lean-forward="false" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+            <state relative-caret-position="400">
+              <caret line="20" column="94" lean-forward="false" selection-start-line="20" selection-start-column="94" selection-end-line="20" selection-end-column="94" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -63,11 +59,9 @@
       <file leaf-file-name="loginScreen.dart" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/loginScreen.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="6" column="59" lean-forward="false" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-120">
+              <caret line="0" column="39" lean-forward="false" selection-start-line="0" selection-start-column="39" selection-end-line="0" selection-end-column="39" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -75,8 +69,8 @@
       <file leaf-file-name="mainViews.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/mainViews.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="69" selection-end-column="7" />
+            <state relative-caret-position="372">
+              <caret line="102" column="24" lean-forward="false" selection-start-line="102" selection-start-column="24" selection-end-line="102" selection-end-column="36" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -126,7 +120,6 @@
         <option value="$PROJECT_DIR$/lib/hallOfFame.dart" />
         <option value="$PROJECT_DIR$/lib/upcomingChallenges.dart" />
         <option value="$PROJECT_DIR$/lib/submitEntry.dart" />
-        <option value="$PROJECT_DIR$/lib/mainViews.dart" />
         <option value="$PROJECT_DIR$/lib/suggestChallenge.dart" />
         <option value="$PROJECT_DIR$/lib/upcomingChallengeCard.dart" />
         <option value="$PROJECT_DIR$/lib/current_challenge.dart" />
@@ -135,15 +128,18 @@
         <option value="$PROJECT_DIR$/lib/suggestedChallengeCard.dart" />
         <option value="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/pubspec.yaml" />
+        <option value="$PROJECT_DIR$/lib/mainViews.dart" />
         <option value="$PROJECT_DIR$/lib/main.dart" />
+        <option value="$PROJECT_DIR$/lib/GihubApi1.dart" />
+        <option value="$PROJECT_DIR$/lib/GithubApi1.dart" />
         <option value="$PROJECT_DIR$/lib/loginScreen.dart" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="953" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+    <option name="y" value="23" />
+    <option name="width" value="1920" />
+    <option name="height" value="1100" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -226,7 +222,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CallManager" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../simple_auth" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="show.migrate.to.gradle.popup" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
@@ -417,27 +413,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <marker date="1536103842447" expanded="true" signature="607:1942" ph="flutter: &lt;2 keys&gt;" />
-            <marker date="1536103842447" expanded="true" signature="1225:1942" ph="fonts: &lt;1 item&gt;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/mainViews.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="30" lean-forward="false" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/main.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
@@ -453,8 +428,8 @@
         <state relative-caret-position="40">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
-            <marker date="1536103842447" expanded="true" signature="607:1942" ph="flutter: &lt;2 keys&gt;" />
-            <marker date="1536103842447" expanded="true" signature="1225:1942" ph="fonts: &lt;1 item&gt;" />
+            <marker date="1536105335002" expanded="true" signature="607:1942" ph="flutter: &lt;2 keys&gt;" />
+            <marker date="1536105335002" expanded="true" signature="1225:1942" ph="fonts: &lt;1 item&gt;" />
           </folding>
         </state>
       </provider>
@@ -484,8 +459,8 @@
         <state relative-caret-position="80">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
-            <marker date="1536103842447" expanded="true" signature="607:1942" ph="flutter: &lt;2 keys&gt;" />
-            <marker date="1536103842447" expanded="true" signature="1225:1942" ph="fonts: &lt;1 item&gt;" />
+            <marker date="1536105335002" expanded="true" signature="607:1942" ph="flutter: &lt;2 keys&gt;" />
+            <marker date="1536105335002" expanded="true" signature="1225:1942" ph="fonts: &lt;1 item&gt;" />
           </folding>
         </state>
       </provider>
@@ -523,8 +498,8 @@
         <state relative-caret-position="80">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
-            <marker date="1536103842447" expanded="true" signature="607:1942" ph="flutter: &lt;2 keys&gt;" />
-            <marker date="1536103842447" expanded="true" signature="1225:1942" ph="fonts: &lt;1 item&gt;" />
+            <marker date="1536105335002" expanded="true" signature="607:1942" ph="flutter: &lt;2 keys&gt;" />
+            <marker date="1536105335002" expanded="true" signature="1225:1942" ph="fonts: &lt;1 item&gt;" />
           </folding>
         </state>
       </provider>
@@ -554,8 +529,8 @@
         <state relative-caret-position="40">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
-            <marker date="1536103842447" expanded="true" signature="607:1942" ph="flutter: &lt;2 keys&gt;" />
-            <marker date="1536103842447" expanded="true" signature="1225:1942" ph="fonts: &lt;1 item&gt;" />
+            <marker date="1536105335002" expanded="true" signature="607:1942" ph="flutter: &lt;2 keys&gt;" />
+            <marker date="1536105335002" expanded="true" signature="1225:1942" ph="fonts: &lt;1 item&gt;" />
           </folding>
         </state>
       </provider>
@@ -585,8 +560,8 @@
         <state relative-caret-position="40">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
-            <marker date="1536103842447" expanded="true" signature="607:1942" ph="flutter: &lt;2 keys&gt;" />
-            <marker date="1536103842447" expanded="true" signature="1225:1942" ph="fonts: &lt;1 item&gt;" />
+            <marker date="1536105335002" expanded="true" signature="607:1942" ph="flutter: &lt;2 keys&gt;" />
+            <marker date="1536105335002" expanded="true" signature="1225:1942" ph="fonts: &lt;1 item&gt;" />
           </folding>
         </state>
       </provider>
@@ -616,8 +591,8 @@
         <state relative-caret-position="80">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
-            <marker date="1536103842447" expanded="true" signature="607:1942" ph="flutter: &lt;2 keys&gt;" />
-            <marker date="1536103842447" expanded="true" signature="1225:1942" ph="fonts: &lt;1 item&gt;" />
+            <marker date="1536105335002" expanded="true" signature="607:1942" ph="flutter: &lt;2 keys&gt;" />
+            <marker date="1536105335002" expanded="true" signature="1225:1942" ph="fonts: &lt;1 item&gt;" />
           </folding>
         </state>
       </provider>
@@ -655,8 +630,8 @@
         <state relative-caret-position="80">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
-            <marker date="1536103842447" expanded="true" signature="607:1942" ph="flutter: &lt;2 keys&gt;" />
-            <marker date="1536103842447" expanded="true" signature="1225:1942" ph="fonts: &lt;1 item&gt;" />
+            <marker date="1536105335002" expanded="true" signature="607:1942" ph="flutter: &lt;2 keys&gt;" />
+            <marker date="1536105335002" expanded="true" signature="1225:1942" ph="fonts: &lt;1 item&gt;" />
           </folding>
         </state>
       </provider>
@@ -686,8 +661,8 @@
         <state relative-caret-position="40">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
-            <marker date="1536103842447" expanded="true" signature="607:1942" ph="flutter: &lt;2 keys&gt;" />
-            <marker date="1536103842447" expanded="true" signature="1225:1942" ph="fonts: &lt;1 item&gt;" />
+            <marker date="1536105335002" expanded="true" signature="607:1942" ph="flutter: &lt;2 keys&gt;" />
+            <marker date="1536105335002" expanded="true" signature="1225:1942" ph="fonts: &lt;1 item&gt;" />
           </folding>
         </state>
       </provider>
@@ -717,8 +692,8 @@
         <state relative-caret-position="40">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
-            <marker date="1536103842447" expanded="true" signature="607:1942" ph="flutter: &lt;2 keys&gt;" />
-            <marker date="1536103842447" expanded="true" signature="1225:1942" ph="fonts: &lt;1 item&gt;" />
+            <marker date="1536105335002" expanded="true" signature="607:1942" ph="flutter: &lt;2 keys&gt;" />
+            <marker date="1536105335002" expanded="true" signature="1225:1942" ph="fonts: &lt;1 item&gt;" />
           </folding>
         </state>
       </provider>
@@ -854,8 +829,8 @@
         <state relative-caret-position="180">
           <caret line="9" column="29" lean-forward="false" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
           <folding>
-            <marker date="1536103842447" expanded="true" signature="607:1942" ph="flutter: &lt;2 keys&gt;" />
-            <marker date="1536103842447" expanded="true" signature="1225:1942" ph="fonts: &lt;1 item&gt;" />
+            <marker date="1536105335002" expanded="true" signature="607:1942" ph="flutter: &lt;2 keys&gt;" />
+            <marker date="1536105335002" expanded="true" signature="1225:1942" ph="fonts: &lt;1 item&gt;" />
           </folding>
         </state>
       </provider>
@@ -876,33 +851,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/main.dart">
+    <entry file="file://$PROJECT_DIR$/lib/mainViews.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="17" column="24" lean-forward="false" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+        <state relative-caret-position="372">
+          <caret line="102" column="24" lean-forward="false" selection-start-line="102" selection-start-column="24" selection-end-line="102" selection-end-column="36" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/mainViews.dart">
+    <entry file="file://$PROJECT_DIR$/lib/main.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="69" selection-end-column="7" />
+        <state relative-caret-position="400">
+          <caret line="20" column="94" lean-forward="false" selection-start-line="20" selection-start-column="94" selection-end-line="20" selection-end-column="94" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/simple_auth-1.0.4/lib/src/providers/github.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="15" column="70" lean-forward="true" selection-start-line="15" selection-start-column="70" selection-end-line="15" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/GithubApi1.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="10" column="14" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/loginScreen.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="59" lean-forward="false" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-120">
+          <caret line="0" column="39" lean-forward="false" selection-start-line="0" selection-start-column="39" selection-end-line="0" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>

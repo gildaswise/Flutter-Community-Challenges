@@ -99,13 +99,13 @@ class _MainViewsState extends State<MainViews> {
       body: NestedScrollView(
         scrollDirection: Axis.vertical,
         headerSliverBuilder: (_, isScrolled) => [
-              SliverAppBar(
-                title: Text(widget.title),
-                centerTitle: true,
-                snap: true,
-                floating: true,
-              ),
-            ],
+          SliverAppBar(
+            title: Text(widget.title),
+            centerTitle: true,
+            snap: true,
+            floating: true,
+          ),
+        ],
         body: PageView(
           onPageChanged: _onPageChanged,
           controller: _pageController,
