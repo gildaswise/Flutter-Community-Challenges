@@ -21,7 +21,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final simpleAuth.GithubApi githubApi = simpleAuth.GithubApi(
     "github", "9020fb1eded8b2a9206f",
     "635a3c0c4513af8899339002fd20164182bc817c",
-    "https://github.com/GroovinChip/Flutter-Community-Challenges",
+    "com.groovinchip.fluttercommunitychallenges:/",
     scopes: [
       "user",
       "repo",
@@ -48,6 +48,8 @@ class _LoginScreenState extends State<LoginScreen> {
     try {
       var success = await api.authenticate();
       showMessage("Logged in success: $success");
+      Navigator.of(context).pushNamedAndRemoveUntil(
+          '/MainViews', (Route<dynamic> route) => false);
     } catch (e) {
       showError(e);
     }
