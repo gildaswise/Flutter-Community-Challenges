@@ -68,14 +68,14 @@
         <entry key="built_collection">
           <value>
             <list>
-              <option value="C:/flutter/.pub-cache/hosted/pub.dartlang.org/built_collection-3.1.3/lib" />
+              <option value="C:/flutter/.pub-cache/hosted/pub.dartlang.org/built_collection-4.0.0/lib" />
             </list>
           </value>
         </entry>
         <entry key="built_value">
           <value>
             <list>
-              <option value="C:/flutter/.pub-cache/hosted/pub.dartlang.org/built_value-5.5.5/lib" />
+              <option value="C:/flutter/.pub-cache/hosted/pub.dartlang.org/built_value-6.1.2/lib" />
             </list>
           </value>
         </entry>
@@ -96,7 +96,7 @@
         <entry key="code_builder">
           <value>
             <list>
-              <option value="C:/flutter/.pub-cache/hosted/pub.dartlang.org/code_builder-3.1.2/lib" />
+              <option value="C:/flutter/.pub-cache/hosted/pub.dartlang.org/code_builder-3.1.3/lib" />
             </list>
           </value>
         </entry>
@@ -159,7 +159,7 @@
         <entry key="flutter_advanced_networkimage">
           <value>
             <list>
-              <option value="C:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_advanced_networkimage-0.3.6/lib" />
+              <option value="C:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_advanced_networkimage-0.3.8/lib" />
             </list>
           </value>
         </entry>
@@ -194,7 +194,7 @@
         <entry key="groovin_material_icons">
           <value>
             <list>
-              <option value="C:/flutter/.pub-cache/hosted/pub.dartlang.org/groovin_material_icons-1.0.3/lib" />
+              <option value="C:/flutter/.pub-cache/hosted/pub.dartlang.org/groovin_material_icons-1.0.5/lib" />
             </list>
           </value>
         </entry>
@@ -404,14 +404,14 @@
         <entry key="simple_auth">
           <value>
             <list>
-              <option value="C:/flutter/.pub-cache/hosted/pub.dartlang.org/simple_auth-1.0.4/lib" />
+              <option value="C:/flutter/.pub-cache/hosted/pub.dartlang.org/simple_auth-1.0.6/lib" />
             </list>
           </value>
         </entry>
         <entry key="simple_auth_flutter">
           <value>
             <list>
-              <option value="C:/flutter/.pub-cache/hosted/pub.dartlang.org/simple_auth_flutter-1.0.4/lib" />
+              <option value="C:/flutter/.pub-cache/hosted/pub.dartlang.org/simple_auth_flutter-1.0.6/lib" />
             </list>
           </value>
         </entry>
@@ -553,11 +553,11 @@
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/build_resolvers-0.2.2+3/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/build_runner-0.10.1+1/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/build_runner_core-0.3.1+5/lib" />
-      <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/built_collection-3.1.3/lib" />
-      <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/built_value-5.5.5/lib" />
+      <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/built_collection-4.0.0/lib" />
+      <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/built_value-6.1.2/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/charcode-1.1.2/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/cli_util-0.1.3+2/lib" />
-      <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/code_builder-3.1.2/lib" />
+      <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/code_builder-3.1.3/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.14.11/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/convert-2.0.2/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/crypto-2.0.6/lib" />
@@ -565,11 +565,11 @@
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-0.1.2/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/dart_style-1.1.3/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/fixnum-0.10.8/lib" />
-      <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_advanced_networkimage-0.3.6/lib" />
+      <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_advanced_networkimage-0.3.8/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/front_end-0.1.4/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/glob-1.1.7/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/graphs-0.1.2+1/lib" />
-      <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/groovin_material_icons-1.0.3/lib" />
+      <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/groovin_material_icons-1.0.5/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/html-0.13.3+3/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.11.3+17/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/http_multi_server-2.0.5/lib" />
@@ -599,8 +599,8 @@
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/shelf_packages_handler-1.0.4/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/shelf_static-0.2.8/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/shelf_web_socket-0.2.2+4/lib" />
-      <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/simple_auth-1.0.4/lib" />
-      <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/simple_auth_flutter-1.0.4/lib" />
+      <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/simple_auth-1.0.6/lib" />
+      <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/simple_auth_flutter-1.0.6/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/source_gen-0.9.0+1/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/source_map_stack_trace-1.1.5/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/source_maps-0.10.7/lib" />
