@@ -1,8 +1,13 @@
+import 'dart:async';
+
 import 'package:flutter/services.dart';
 import 'package:groovin_material_icons/groovin_material_icons.dart';
 import 'package:simple_auth/simple_auth.dart' as simpleAuth;
 import 'package:simple_auth_flutter/simple_auth_flutter.dart';
 import 'package:flutter/material.dart';
+/*import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';*/
+import 'package:uni_links/uni_links.dart';
 
 // The layout of this screen will be improved - GroovinChip
 
@@ -21,7 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final simpleAuth.GithubApi githubApi = simpleAuth.GithubApi(
     "github", "9020fb1eded8b2a9206f",
     "635a3c0c4513af8899339002fd20164182bc817c",
-    "com.groovinchip.fluttercommunitychallenges:/",
+    "",
     scopes: [
       "user",
       "repo",
@@ -46,7 +51,9 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void login(simpleAuth.AuthenticatedApi api) async {
     try {
+      initUniLinks();
       var success = await api.authenticate();
+      print(success.userData);
       showMessage("Logged in success: $success");
       Navigator.of(context).pushNamedAndRemoveUntil(
           '/MainViews', (Route<dynamic> route) => false);
@@ -55,6 +62,17 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
+  Future<Null> initUniLinks() async {
+    // Platform messages may fail, so we use a try/catch PlatformException.
+    try {
+      String initialLink = await getInitialLink();
+      // Parse the link and warn the user, if it is not correct,
+      // but keep in mind it could be `null`.
+    } on PlatformException {
+      // Handle exception by warning the user their action did not succeed
+      // return?
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
