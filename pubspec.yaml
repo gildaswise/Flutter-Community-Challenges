@@ -8,9 +8,11 @@ dependencies:
   groovin_material_icons: ^1.0.2
   json_annotation: ^1.0.0
   simple_auth_flutter: ^1.0.6
-  #firebase_auth: "0.5.18"
-  #cloud_firestore: "0.7.3"
-  uni_links: ^0.1.2
+  firebase_auth: "0.5.18"
+  cloud_firestore: "0.7.3"
+  google_sign_in: ^3.0.5
+  http: ^0.11.3+17
+  url_launcher: ^3.0.3
 
 dev_dependencies:
   build_runner: ^0.10.0

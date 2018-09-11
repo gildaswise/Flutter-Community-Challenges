@@ -1,13 +1,10 @@
 import 'dart:async';
-
 import 'package:flutter/services.dart';
 import 'package:groovin_material_icons/groovin_material_icons.dart';
-import 'package:simple_auth/simple_auth.dart' as simpleAuth;
-import 'package:simple_auth_flutter/simple_auth_flutter.dart';
 import 'package:flutter/material.dart';
-/*import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';*/
-import 'package:uni_links/uni_links.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_community_challenges/googleSignIn.dart';
 
 // The layout of this screen will be improved - GroovinChip
 
@@ -17,60 +14,50 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  @override
-  initState() {
-    super.initState();
-    SimpleAuthFlutter.init(context);
-  }
 
-  final simpleAuth.GithubApi githubApi = simpleAuth.GithubApi(
-    "github", "9020fb1eded8b2a9206f",
-    "635a3c0c4513af8899339002fd20164182bc817c",
-    "",
-    scopes: [
-      "user",
-      "repo",
-      "public_repo",
-    ],
-  );
+  FirebaseUser google_user;
 
-  void showError(dynamic ex) {
-    showMessage(ex.toString());
-  }
+  // gets called on button press
+  Future _loginUser() async {
+    var api = await GoogleSignInAPI.signInWithGoogle();
+    if (api != null) {
+      google_user = api.firebaseUser;
+      CollectionReference dbForUser = Firestore.instance.collection("Users");
+      if (dbForUser.document(google_user.uid).path.isNotEmpty) {
+        setState(() {
+          Navigator.of(context).pushNamedAndRemoveUntil(
+              '/MainViews', (Route<dynamic> route) => false);
+        });
+      } else {
+        dbForUser.document(google_user.uid).setData({});
+      }
+    } else {
 
-  void showMessage(String text) {
-    var alert = new AlertDialog(content: new Text(text), actions: <Widget>[
-      new FlatButton(
-          child: const Text("Ok"),
-          onPressed: () {
-            Navigator.pop(context);
-          })
-    ]);
-    showDialog(context: context, builder: (BuildContext context) => alert);
-  }
-
-  void login(simpleAuth.AuthenticatedApi api) async {
-    try {
-      initUniLinks();
-      var success = await api.authenticate();
-      print(success.userData);
-      showMessage("Logged in success: $success");
-      Navigator.of(context).pushNamedAndRemoveUntil(
-          '/MainViews', (Route<dynamic> route) => false);
-    } catch (e) {
-      showError(e);
     }
   }
 
-  Future<Null> initUniLinks() async {
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    try {
-      String initialLink = await getInitialLink();
-      // Parse the link and warn the user, if it is not correct,
-      // but keep in mind it could be `null`.
-    } on PlatformException {
-      // Handle exception by warning the user their action did not succeed
-      // return?
+  // tracks whether the user is logged in
+  bool _loggedIn = false;
+
+  @override
+  void initState() {
+    super.initState();
+    verifyUser();
+  }
+
+  verifyUser() async {
+    final user = await FirebaseAuth.instance.currentUser();
+    if (user != null) {
+      google_user = user;
+      setState(() {
+        Navigator.of(context).pushNamedAndRemoveUntil(
+            '/MainViews', (Route<dynamic> route) => false);
+      });
+      if (mounted) {
+        setState(() {
+          _loggedIn = true;
+        });
+      }
     }
   }
 
@@ -109,21 +96,28 @@ class _LoginScreenState extends State<LoginScreen> {
                   ],
                 ),
               ),
+              RaisedButton(
+                child: Text("Dev Login"),
+                onPressed: (){
+                  Navigator.of(context).pushNamedAndRemoveUntil(
+                      '/MainViews', (Route<dynamic> route) => false);
+                },
+              ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 00.0),
-                child: RaisedButton.icon(
-                  onPressed: (){
-                    login(githubApi);
-                  },
-                  icon: Icon(GroovinMaterialIcons.github_circle, color: Colors.white,),
-                  label: Text("Sign in with GitHub", style: TextStyle(color: Colors.white),),
+                padding: const EdgeInsets.only(bottom: 50.0),
+                child: _loggedIn
+                    ? const Center(child: CircularProgressIndicator())
+                    : RaisedButton.icon(
                   color: Colors.indigo,
+                  icon: Icon(
+                    GroovinMaterialIcons.google,
+                    color: Colors.white,
+                  ),
+                  label: Text("Sign in with Google",
+                      style: TextStyle(color: Colors.white)),
+                  onPressed: () async => await _loginUser().catchError((e) => print(e)),
                 ),
               ),
-              FlatButton(onPressed: (){
-                Navigator.of(context).pushNamedAndRemoveUntil(
-                    '/MainViews', (Route<dynamic> route) => false);
-              }, child: Text("Dev Login"))
             ],
           ),
         ),
