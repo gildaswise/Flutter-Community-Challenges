@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groovin_material_icons/groovin_material_icons.dart';
-import 'package:flutter_community_challenges/tinyIconButton.dart';
+import 'package:flutter_community_challenges/widgets/tiny_icon_button.dart';
 
 class SuggestedChallengeCard extends StatelessWidget {
   String challengeName;
@@ -46,9 +46,7 @@ class SuggestedChallengeCard extends StatelessWidget {
                         padding: const EdgeInsets.only(bottom: 8.0),
                         child: IconButton(
                           icon: Icon(GroovinMaterialIcons.arrow_up_bold),
-                          onPressed: (){
-
-                          },
+                          onPressed: () {},
                         ),
                       ),
                       Text("X Votes")
@@ -63,4 +61,3 @@ class SuggestedChallengeCard extends StatelessWidget {
     );
   }
 }
-

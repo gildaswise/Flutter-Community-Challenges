@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/services.dart';
+import 'package:flutter_community_challenges/widgets/google_sign_in_button.dart';
 import 'package:groovin_material_icons/groovin_material_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -14,7 +15,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-
   FirebaseUser google_user;
 
   // gets called on button press
@@ -31,9 +31,7 @@ class _LoginScreenState extends State<LoginScreen> {
       } else {
         dbForUser.document(google_user.uid).setData({});
       }
-    } else {
-
-    }
+    } else {}
   }
 
   // tracks whether the user is logged in
@@ -63,7 +61,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
       statusBarIconBrightness: Brightness.dark,
       statusBarColor: Colors.white,
@@ -72,6 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
     ));
 
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Center(
           child: Column(
@@ -81,42 +79,48 @@ class _LoginScreenState extends State<LoginScreen> {
                 padding: const EdgeInsets.only(top: 50.0),
                 child: Column(
                   children: <Widget>[
-                    Text("Flutter Community",
+                    Text(
+                      "Flutter Community",
                       style: TextStyle(
-                        fontSize: 40.0,
-                        fontWeight: FontWeight.bold
-                      ),
+                          fontSize: 40.0, fontWeight: FontWeight.bold),
                     ),
-                    Text("Challenges",
+                    Text(
+                      "Challenges",
                       style: TextStyle(
-                          fontSize: 40.0,
-                          fontWeight: FontWeight.bold
-                      ),
+                          fontSize: 40.0, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
               ),
               RaisedButton(
                 child: Text("Dev Login"),
-                onPressed: (){
+                onPressed: () {
                   Navigator.of(context).pushNamedAndRemoveUntil(
                       '/MainViews', (Route<dynamic> route) => false);
                 },
               ),
               Padding(
                 padding: const EdgeInsets.only(bottom: 50.0),
+                child: GoogleSignInButton(
+                  onPressed: () async =>
+                      await _loginUser().catchError((e) => print(e)),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 50.0),
                 child: _loggedIn
                     ? const Center(child: CircularProgressIndicator())
                     : RaisedButton.icon(
-                  color: Colors.indigo,
-                  icon: Icon(
-                    GroovinMaterialIcons.google,
-                    color: Colors.white,
-                  ),
-                  label: Text("Sign in with Google",
-                      style: TextStyle(color: Colors.white)),
-                  onPressed: () async => await _loginUser().catchError((e) => print(e)),
-                ),
+                        color: Colors.indigo,
+                        icon: Icon(
+                          GroovinMaterialIcons.google,
+                          color: Colors.white,
+                        ),
+                        label: Text("Sign in with Google",
+                            style: TextStyle(color: Colors.white)),
+                        onPressed: () async =>
+                            await _loginUser().catchError((e) => print(e)),
+                      ),
               ),
             ],
           ),
