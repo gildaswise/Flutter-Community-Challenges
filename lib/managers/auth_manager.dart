@@ -68,9 +68,9 @@ class AuthManager {
             message: "Failed on Firestore's transaction, error: $exception");
         userSnapshot = null;
       });
-      return await reference.get();
-    } else {
-      return userSnapshot;
+      userSnapshot = await reference.get();
     }
+
+    return userSnapshot;
   }
 }

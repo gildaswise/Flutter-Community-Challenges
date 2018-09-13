@@ -39,8 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
   _verifyUser() async {
     await _authManager.currentUser.then((user) {
       if (user != null) {
-        Navigator.of(context).pushNamedAndRemoveUntil(
-            '/MainViews', (Route<dynamic> route) => false);
+        Navigator.of(context).pushReplacementNamed('/MainViews');
       }
     });
   }
@@ -59,7 +58,7 @@ class _LoginScreenState extends State<LoginScreen> {
         await _authManager.signInWithGoogle().catchError(_showSnackBar);
     final storeUser =
         await _authManager.updateUser(user).catchError(_showSnackBar);
-    if (storeUser != null) {
+    if (storeUser != null && storeUser.exists) {
       _verifyUser();
     }
   }
@@ -112,10 +111,8 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               RaisedButton(
                 child: Text("Dev Login"),
-                onPressed: () {
-                  Navigator.of(context).pushNamedAndRemoveUntil(
-                      '/MainViews', (Route<dynamic> route) => false);
-                },
+                onPressed: () =>
+                    Navigator.of(context).pushReplacementNamed('/MainViews'),
               ),
               Padding(
                 padding: const EdgeInsets.only(bottom: 50.0),
