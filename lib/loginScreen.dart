@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/services.dart';
+import 'package:flutter_community_challenges/managers/auth_manager.dart';
 import 'package:flutter_community_challenges/widgets/google_sign_in_button.dart';
 import 'package:groovin_material_icons/groovin_material_icons.dart';
 import 'package:flutter/material.dart';
@@ -15,48 +16,64 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  FirebaseUser google_user;
-
-  // gets called on button press
-  Future _loginUser() async {
-    var api = await GoogleSignInAPI.signInWithGoogle();
-    if (api != null) {
-      google_user = api.firebaseUser;
-      CollectionReference dbForUser = Firestore.instance.collection("Users");
-      if (dbForUser.document(google_user.uid).path.isNotEmpty) {
-        setState(() {
-          Navigator.of(context).pushNamedAndRemoveUntil(
-              '/MainViews', (Route<dynamic> route) => false);
-        });
-      } else {
-        dbForUser.document(google_user.uid).setData({});
-      }
-    } else {}
-  }
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
+  final _authManager = AuthManager.instance;
 
   // tracks whether the user is logged in
-  bool _loggedIn = false;
+  bool _loading = false;
 
   @override
   void initState() {
     super.initState();
-    verifyUser();
+    _verifyUser();
   }
 
-  verifyUser() async {
-    final user = await FirebaseAuth.instance.currentUser();
-    if (user != null) {
-      google_user = user;
+  _updateLoading(bool value) {
+    if (mounted) {
       setState(() {
+        _loading = value;
+      });
+    }
+  }
+
+  _verifyUser() async {
+    await _authManager.currentUser.then((user) {
+      if (user != null) {
         Navigator.of(context).pushNamedAndRemoveUntil(
             '/MainViews', (Route<dynamic> route) => false);
-      });
-      if (mounted) {
-        setState(() {
-          _loggedIn = true;
-        });
       }
+    });
+  }
+
+  _showSnackBar(String message) {
+    if (mounted && message != null && message.isNotEmpty)
+      _scaffoldKey.currentState.showSnackBar(
+        SnackBar(content: Text("Couldn't sign in: $message")),
+      );
+  }
+
+  // gets called on button press
+  _loginUser() async {
+    _updateLoading(true);
+    final user =
+        await _authManager.signInWithGoogle().catchError(_showSnackBar);
+    final storeUser =
+        await _authManager.updateUser(user).catchError(_showSnackBar);
+    if (storeUser != null) {
+      _verifyUser();
     }
+  }
+
+  Widget _buildSignInButton() {
+    return RaisedButton.icon(
+      color: Colors.indigo,
+      icon: Icon(
+        GroovinMaterialIcons.google,
+        color: Colors.white,
+      ),
+      label: Text("Sign in with Google", style: TextStyle(color: Colors.white)),
+      onPressed: () async => await _loginUser(),
+    );
   }
 
   @override
@@ -69,11 +86,12 @@ class _LoginScreenState extends State<LoginScreen> {
     ));
 
     return Scaffold(
+      key: _scaffoldKey,
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.only(top: 50.0),
@@ -101,25 +119,10 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               Padding(
                 padding: const EdgeInsets.only(bottom: 50.0),
-                child: GoogleSignInButton(
-                  onPressed: () async =>
-                      await _loginUser().catchError((e) => print(e)),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 50.0),
-                child: _loggedIn
-                    ? const Center(child: CircularProgressIndicator())
-                    : RaisedButton.icon(
-                        color: Colors.indigo,
-                        icon: Icon(
-                          GroovinMaterialIcons.google,
-                          color: Colors.white,
-                        ),
-                        label: Text("Sign in with Google",
-                            style: TextStyle(color: Colors.white)),
-                        onPressed: () async =>
-                            await _loginUser().catchError((e) => print(e)),
+                child: _loading
+                    ? const CircularProgressIndicator()
+                    : GoogleSignInButton(
+                        onPressed: () async => await _loginUser(),
                       ),
               ),
             ],
