@@ -37,11 +37,14 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   _verifyUser() async {
+    _updateLoading(true);
     await _authManager.currentUser.then((user) {
       if (user != null) {
         Navigator.of(context).pushReplacementNamed('/MainViews');
+      } else {
+        _updateLoading(false);
       }
-    });
+    }).catchError(_showSnackBar);
   }
 
   _showSnackBar(String message) {
@@ -58,8 +61,9 @@ class _LoginScreenState extends State<LoginScreen> {
         await _authManager.signInWithGoogle().catchError(_showSnackBar);
     final storeUser =
         await _authManager.updateUser(user).catchError(_showSnackBar);
+    _updateLoading(false);
     if (storeUser != null && storeUser.exists) {
-      _verifyUser();
+      Navigator.of(context).pushReplacementNamed('/MainViews');
     }
   }
 
@@ -71,18 +75,22 @@ class _LoginScreenState extends State<LoginScreen> {
         color: Colors.white,
       ),
       label: Text("Sign in with Google", style: TextStyle(color: Colors.white)),
-      onPressed: () async => await _loginUser(),
+      onPressed: _loginUser,
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
-      statusBarIconBrightness: Brightness.dark,
-      statusBarColor: Colors.white,
-      systemNavigationBarColor: Colors.white,
-      systemNavigationBarIconBrightness: Brightness.dark,
-    ));
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        statusBarBrightness: Brightness.light,
+        statusBarColor: Colors.white,
+        statusBarIconBrightness: Brightness.dark,
+        systemNavigationBarColor: Colors.white,
+        systemNavigationBarIconBrightness: Brightness.dark,
+        systemNavigationBarDividerColor: Colors.white,
+      ),
+    );
 
     return Scaffold(
       key: _scaffoldKey,
@@ -109,17 +117,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   ],
                 ),
               ),
-              RaisedButton(
-                child: Text("Dev Login"),
-                onPressed: () =>
-                    Navigator.of(context).pushReplacementNamed('/MainViews'),
-              ),
               Padding(
                 padding: const EdgeInsets.only(bottom: 50.0),
                 child: _loading
                     ? const CircularProgressIndicator()
                     : GoogleSignInButton(
-                        onPressed: () async => await _loginUser(),
+                        onPressed: _loginUser,
                       ),
               ),
             ],
