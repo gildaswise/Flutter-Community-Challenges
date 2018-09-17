@@ -23,27 +23,24 @@ class AuthManager {
 
   Future<FirebaseUser> get currentUser async => await _auth.currentUser();
 
-  Future<FirebaseUser> signInWithGoogle({OnError onError}) async {
+  Future<FirebaseUser> signInWithGoogle() async {
     final GoogleSignInAccount googleUser =
         await _googleSignIn.signIn().catchError((exception, stacktrace) {
       Logger.log(TAG, message: "Failed on Google's sign in, error: $exception");
     });
     final GoogleSignInAuthentication googleAuth =
-        await googleUser.authentication;
-    return await _auth
-        .signInWithGoogle(
-      accessToken: googleAuth.accessToken,
-      idToken: googleAuth.idToken,
-    )
-        .catchError((exception, stacktrace) {
-      Logger.log(TAG,
-          message: "Failed on Firebase's sign in, error: $exception");
-    });
+        await googleUser?.authentication;
+    return await _auth.signInWithGoogle(
+      accessToken: googleAuth?.accessToken,
+      idToken: googleAuth?.idToken,
+    );
   }
 
   Future<DocumentSnapshot> updateUser(FirebaseUser user) async {
+    if (user == null) return null;
+
     final DocumentReference reference =
-        _store.collection(COLLECTION_TAG).document(user.uid);
+        _store.collection(COLLECTION_TAG).document(user?.uid);
     DocumentSnapshot userSnapshot;
 
     await reference
@@ -58,10 +55,10 @@ class AuthManager {
     if (userSnapshot == null) {
       await _store.runTransaction((transaction) async {
         await transaction.set(reference, {
-          "uid": user.uid,
-          "displayName": user.displayName,
-          "email": user.email,
-          "photoUrl": user.photoUrl,
+          "uid": user?.uid,
+          "displayName": user?.displayName,
+          "email": user?.email,
+          "photoUrl": user?.photoUrl,
         });
       }).catchError((exception, stacktrace) {
         Logger.log(TAG,

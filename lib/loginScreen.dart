@@ -1,16 +1,16 @@
 import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:flutter_community_challenges/managers/auth_manager.dart';
+import 'package:flutter_community_challenges/utils/logger.dart';
 import 'package:flutter_community_challenges/widgets/google_sign_in_button.dart';
 import 'package:groovin_material_icons/groovin_material_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter_community_challenges/googleSignIn.dart';
 
 // The layout of this screen will be improved - GroovinChip
 
 class LoginScreen extends StatefulWidget {
+  static const String TAG = "LOGIN_SCREEN";
+
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
@@ -44,26 +44,34 @@ class _LoginScreenState extends State<LoginScreen> {
       } else {
         _updateLoading(false);
       }
-    }).catchError(_showSnackBar);
+    }).catchError((exception, stacktrace) {
+      _handleError(exception, stacktrace);
+      _showSnackBar("Couldn't sign in for now, please try again later");
+    });
+  }
+
+  _handleError(Object exception, StackTrace stacktrace) {
+    Logger.log(LoginScreen.TAG, message: "Error: $exception, $stacktrace");
   }
 
   _showSnackBar(String message) {
     if (mounted && message != null && message.isNotEmpty)
       _scaffoldKey.currentState.showSnackBar(
-        SnackBar(content: Text("Couldn't sign in: $message")),
+        SnackBar(content: Text(message)),
       );
   }
 
   // gets called on button press
   _loginUser() async {
     _updateLoading(true);
-    final user =
-        await _authManager.signInWithGoogle().catchError(_showSnackBar);
+    final user = await _authManager.signInWithGoogle().catchError(_handleError);
     final storeUser =
-        await _authManager.updateUser(user).catchError(_showSnackBar);
+        await _authManager.updateUser(user).catchError(_handleError);
     _updateLoading(false);
     if (storeUser != null && storeUser.exists) {
       Navigator.of(context).pushReplacementNamed('/MainViews');
+    } else {
+      _showSnackBar("Couldn't sign in for now, please try again later");
     }
   }
 
@@ -98,33 +106,18 @@ class _LoginScreenState extends State<LoginScreen> {
       body: SafeArea(
         child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.only(top: 50.0),
-                child: Column(
-                  children: <Widget>[
-                    Text(
-                      "Flutter Community",
-                      style: TextStyle(
-                          fontSize: 40.0, fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      "Challenges",
-                      style: TextStyle(
-                          fontSize: 40.0, fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
+              Text(
+                "Flutter Community\nChallenges",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 40.0, fontWeight: FontWeight.bold),
               ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 50.0),
-                child: _loading
-                    ? const CircularProgressIndicator()
-                    : GoogleSignInButton(
-                        onPressed: _loginUser,
-                      ),
-              ),
+              SizedBox(height: 16.0),
+              _loading
+                  ? const CircularProgressIndicator()
+                  : GoogleSignInButton(onPressed: _loginUser),
             ],
           ),
         ),
