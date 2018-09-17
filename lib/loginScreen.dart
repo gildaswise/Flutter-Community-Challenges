@@ -51,7 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
       google_user = user;
       setState(() {
         Navigator.of(context).pushNamedAndRemoveUntil(
-            '/MainViews', (Route<dynamic> route) => false);
+          '/MainViews', (Route<dynamic> route) => false);
       });
       if (mounted) {
         setState(() {
@@ -64,11 +64,18 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
 
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
+    /*SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
       statusBarIconBrightness: Brightness.dark,
       statusBarColor: Colors.white,
       systemNavigationBarColor: Colors.white,
       systemNavigationBarIconBrightness: Brightness.dark,
+    ));
+*/
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light.copyWith(
+      statusBarIconBrightness: Brightness.light,
+      statusBarColor: Colors.indigo,
+      systemNavigationBarColor: Colors.indigo,
+      systemNavigationBarIconBrightness: Brightness.light,
     ));
 
     return Scaffold(
@@ -95,13 +102,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ],
                 ),
-              ),
-              RaisedButton(
-                child: Text("Dev Login"),
-                onPressed: (){
-                  Navigator.of(context).pushNamedAndRemoveUntil(
-                      '/MainViews', (Route<dynamic> route) => false);
-                },
               ),
               Padding(
                 padding: const EdgeInsets.only(bottom: 50.0),

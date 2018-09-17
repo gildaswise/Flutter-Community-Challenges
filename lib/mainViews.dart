@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_community_challenges/about.dart';
@@ -62,12 +64,13 @@ class _MainViewsState extends State<MainViews> {
         .map<Widget>((PagerPage page) => page.fabBuilder(context))
         .toList();
 
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light.copyWith(
-      statusBarIconBrightness: Theme.of(context).brightness,
-      statusBarColor: Theme.of(context).primaryColor,
-      systemNavigationBarColor: Theme.of(context).primaryColor,
-      systemNavigationBarIconBrightness: Theme.of(context).brightness,
-    ));
+    /*SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light.copyWith(
+      statusBarIconBrightness: Brightness.light,
+      statusBarColor: Colors.indigo,
+      systemNavigationBarColor: Colors.indigo,
+      systemNavigationBarIconBrightness: Brightness.light,
+    ));*/
+
 
     return Scaffold(
       drawer: Drawer(
@@ -75,8 +78,10 @@ class _MainViewsState extends State<MainViews> {
           children: <Widget>[
             UserAccountsDrawerHeader(
               accountName: Text("Test Person"),
-              accountEmail: Text("testperson@test.com"),
-              currentAccountPicture: const CircleAvatar(),
+              accountEmail: Text("testperson@gmail.com"),
+              currentAccountPicture: CircleAvatar(
+                child: Text("T"),
+              ),
             ),
             ListTile(
               title: Text("My Submissions"),
@@ -91,7 +96,30 @@ class _MainViewsState extends State<MainViews> {
             ListTile(
               title: Text("Log Out"),
               trailing: Icon(GroovinMaterialIcons.logout),
-              onTap: () {},
+              onTap: () {
+                showDialog(
+                  context: context,
+                  builder: (_) => AlertDialog(
+                    title: Text("Log Out"),
+                    content: Text("Are you sure you want to log out?"),
+                    actions: <Widget>[
+                      FlatButton(
+                        onPressed: (){
+                          Navigator.pop(context);
+                        },
+                        child: Text("No"),
+                      ),
+                      FlatButton(
+                        onPressed: (){
+                          FirebaseAuth.instance.signOut();
+                          Navigator.of(context).pushNamedAndRemoveUntil('/',(Route<dynamic> route) => false);
+                        },
+                        child: Text("Yes"),
+                      ),
+                    ],
+                  ),
+                );
+              },
             ),
           ],
         ),
